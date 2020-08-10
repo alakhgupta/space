@@ -5,7 +5,8 @@ import { SpaceComponent } from './components/space/space.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'space', pathMatch:'full'},
-  { path: 'space', component:  SpaceComponent }
+  { path: 'space/:id', component:  SpaceComponent },
+  { path: 'space', component:  SpaceComponent },
 
 ];
 

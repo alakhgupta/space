@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpacexService } from '../../services/spacex.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-space',
@@ -12,7 +13,7 @@ export class SpaceComponent implements OnInit {
   launchSpace: any = [];
   filterDataArray: any = [];
 
-  constructor(private spacex: SpacexService) { }
+  constructor(private router: Router, private spacex: SpacexService) { }
 
   ngOnInit(): void {
 
@@ -40,6 +41,8 @@ export class SpaceComponent implements OnInit {
       if (element.launch_year == x) {
 
         this.launchSpace.push(element);
+
+        this.router.navigate(['/space/'+element.launch_year]);
 
         console.log(this.launchSpace);
       }
