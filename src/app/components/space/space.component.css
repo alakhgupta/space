@@ -54,7 +54,33 @@
       display: block;
       margin-bottom: 20px;
     }
+    .mat-card{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: 72%;
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin-bottom: 16px;
+        margin-left: 35px;
+    }
   }
+
+  @media screen and (min-width: 600px) and (max-device-width: 768px) {
+    .column {
+      width: 43%;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .mat-card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin-bottom: 16px;
+      }
+  }
+
   .title {
     font-size: 31px;
     /* width: 51%; */
