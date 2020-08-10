@@ -12,4 +12,28 @@ export class SpacexService {
     return this.http.get('https://api.spacexdata.com/v3/launches?limit=100');
   }
 
+  getLaunchSuccessData(){
+
+    return this.http.get('https://api.spacexdata.com/v3/launches?limit=100&amp;launch_success=true');
+
+  }
+
+  getLaunchFalseData(){
+
+    return this.http.get('https://api.spacexdata.com/v3/launches?limit=100&amp;launch_success=false');
+
+  }
+
+  getLandFalseData(){
+
+    return this.http.get('https://api.spacexdata.com/v3/launches?limit=100&amp;launch_success=true&amp;land_success=false');
+
+  }
+
+  getLandTrueData(){
+
+    return this.http.get('https://api.spacexdata.com/v3/launches?limit=100&amp;launch_success=true&amp;land_success=true');
+
+  }
+
 }

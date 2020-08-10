@@ -18,18 +18,12 @@ export class SpaceComponent implements OnInit {
   ngOnInit(): void {
 
     this.spacex.getConfig().subscribe(data => {
-
       this.responseSpace = data;
       console.log(this.responseSpace);
-
       this.responseSpace.forEach(element => {
-
         this.launchSpace.push(element);
-
       });
-
     })
-
   }
 
   filterData(x: any) {
@@ -37,18 +31,57 @@ export class SpaceComponent implements OnInit {
     console.log(x);
     this.launchSpace = [];
     this.responseSpace.forEach(element => {
-
       if (element.launch_year == x) {
-
         this.launchSpace.push(element);
-
-        this.router.navigate(['/space/'+element.launch_year]);
-
+        this.router.navigate(['/space/' + element.launch_year]);
         console.log(this.launchSpace);
       }
-
     });
-
   }
 
+  filterDataLaunch(x: any) {
+
+    if (x == 'true') {
+      this.launchSpace = [];
+      this.spacex.getLaunchSuccessData().subscribe(data => {
+        this.responseSpace = data;
+        console.log(this.responseSpace);
+        this.responseSpace.forEach(element => {
+          this.launchSpace.push(element);
+        });
+      })
+    } else {
+      this.launchSpace = [];
+      this.spacex.getLaunchFalseData().subscribe(data => {
+        this.responseSpace = data;
+        console.log(this.responseSpace);
+        this.responseSpace.forEach(element => {
+          this.launchSpace.push(element);
+        });
+      })
+    }
+  }
+
+  filterDataLanding(x: any) {
+
+    if (x == 'true') {
+      this.launchSpace = [];
+      this.spacex.getLandTrueData().subscribe(data => {
+        this.responseSpace = data;
+        console.log(this.responseSpace);
+        this.responseSpace.forEach(element => {
+          this.launchSpace.push(element);
+        });
+      })
+    } else {
+      this.launchSpace = [];
+      this.spacex.getLandFalseData().subscribe(data => {
+        this.responseSpace = data;
+        console.log(this.responseSpace);
+        this.responseSpace.forEach(element => {
+          this.launchSpace.push(element);
+        });
+      })
+    }
+  }
 }
