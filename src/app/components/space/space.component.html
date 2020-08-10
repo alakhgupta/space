@@ -1,0 +1,63 @@
+<div class="container">
+    <p class="title">SpaceX Launch Program</p>
+    <div class="row">
+        <div class="column">
+            <mat-card>
+                <p class="filter">Filters</p>
+                <p class="Year">Launch Year</p><br>
+
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" (click)="filterData('2006')">2006</button>
+                    <button mat-raised-button color="primary" (click)="filterData('2007')">2007</button>
+                </div>
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" (click)="filterData('2008')">2008</button>
+                    <button mat-raised-button color="primary" (click)="filterData('2009')">2009</button>
+                </div>
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" (click)="filterData('2010')">2010</button>
+                    <button mat-raised-button color="primary" (click)="filterData('2011')">2011</button>
+                </div>
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" (click)="filterData('2012')">2012</button>
+                    <button mat-raised-button color="primary" (click)="filterData('2013')">2013</button>
+                </div>
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" (click)="filterData('2014')">2014</button>
+                    <button mat-raised-button color="primary" (click)="filterData('2015')">2015</button>
+                </div>
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" (click)="filterData('2016')">2016</button>
+                    <button mat-raised-button color="primary" (click)="filterData('2017')">2017</button>
+                </div>
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" (click)="filterData('2018')">2018</button>
+                    <button mat-raised-button color="primary" (click)="filterData('2019')">2019</button>
+                </div>
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" (click)="filterData('2020')">2020</button>
+                </div>
+                <!-- SuccessFul Launch
+            <div class="example-button-row">
+                <button mat-raised-button color="primary" (click)="filterDataLaunch('true')">True</button>
+                <button mat-raised-button color="primary" (click)="filterDataLaunch('false')">False</button>
+            </div>
+            SuccessFul Landing
+            <div class="example-button-row">
+                <button mat-raised-button color="primary" (click)="filterDataLanding('true')">True</button>
+                <button mat-raised-button color="primary" (click)="filterDataLanding('false')">False</button>
+            </div> -->
+
+            </mat-card>
+        </div>
+        <div class="column" *ngFor="let details of launchSpace">
+            <mat-card>
+                <img [src]="details.links.mission_patch_small" alt="image">
+                Mission : {{details.mission_name}}<br>
+                Mission Id : {{details.mission_id}}<br>
+                Launch Year : {{details.launch_year}}<br>
+                Launch Success : {{details.launch_success}}<br>
+            </mat-card>
+        </div>
+    </div>
+</div>
